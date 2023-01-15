@@ -44,8 +44,8 @@ int main(int argc, char *argv[])
         cv::cvtColor(img, hsv, cv::COLOR_BGR2HSV);
 
         // Określenie zakresów dolnego i górnego koloru zielonego
-        cv::Scalar lower_green(30, 50, 50);
-        cv::Scalar upper_green(90, 255, 255);
+        cv::Scalar lower_green(w.getHSVHMin(),w.getHSVSMin(),w.getHSVVMin());//(30, 50, 50);
+        cv::Scalar upper_green(w.getHSVHMax(),w.getHSVSMax(),w.getHSVVMax());//(90, 255, 255);
         // Wyodrębnienie obszaru zielonego z obrazu
         cv::Mat mask;
         cv::inRange(hsv, lower_green, upper_green, mask);
