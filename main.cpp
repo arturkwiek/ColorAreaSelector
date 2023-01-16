@@ -12,7 +12,6 @@
 #include <opencv2/calib3d.hpp>
 #include <opencv2/core.hpp>
 #include <opencv2/videoio.hpp>
-#include <opencv2/videostab.hpp>
 
 
 #define qout(x) qDebug() << x << endl
@@ -32,7 +31,6 @@ int main(int argc, char *argv[])
 
     for(;;)
     {
-        qDebug() << "ooo";
         capture >> img;
 
         flip(img,img,1);
