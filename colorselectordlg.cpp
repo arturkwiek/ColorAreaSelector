@@ -3,17 +3,124 @@
 
 ColorSelectorDlg::ColorSelectorDlg(QWidget *parent)
     : QDialog(parent)
+    , uiHSVHMin(0)
+    , uiHSVSMin(0)
+    , uiHSVVMin(0)
+    , uiHSVHMax(0)
+    , uiHSVSMax(0)
+    , uiHSVVMax(0)
     , ui(new Ui::ColorSelectorDlg)
 {
-    ui->setupUi(this);
 
-//    QLabel* label = new QLabel();
-//    label->setAutoFillBackground(true);
-//    QPalette palette = label->palette();
-//    QColor color;
-//    color.setHsv(10, 10, 10);
-//    palette.setColor(label->backgroundRole(), color);
-//    label->setPalette(palette);
+    ui->setupUi(this);
+    //    'black': [[180, 255, 30], [0, 0, 0]],
+    if(false)
+    {
+        uiHSVHMax = 180;
+        uiHSVSMax = 255;
+        uiHSVVMax = 30;
+        uiHSVHMin = 0;
+        uiHSVSMin = 0;
+        uiHSVVMin = 0;
+    }
+    //    'white': [[180, 18, 255], [0, 0, 231]],
+    if(true)
+    {
+        uiHSVHMax = 180;
+        uiHSVSMax = 18;
+        uiHSVVMax = 255;
+        uiHSVHMin = 0;
+        uiHSVSMin = 0;
+        uiHSVVMin = 231;
+    }
+    //    'red1': [[180, 255, 255], [159, 50, 70]],
+    if(false)
+    {
+        uiHSVHMax = 180;
+        uiHSVSMax = 255;
+        uiHSVVMax = 255;
+        uiHSVHMin = 159;
+        uiHSVSMin = 50;
+        uiHSVVMin = 70;
+    }
+    //    'red2': [[9, 255, 255], [0, 50, 70]],
+    if(false)
+    {
+        uiHSVHMax = 9;
+        uiHSVSMax = 255;
+        uiHSVVMax = 255;
+        uiHSVHMin = 0;
+        uiHSVSMin = 50;
+        uiHSVVMin = 70;
+    }
+    //'green': [[89, 255, 255], [36, 50, 70]],
+    if(false)
+    {
+        uiHSVHMax = 89;
+        uiHSVSMax = 255;
+        uiHSVVMax = 255;
+        uiHSVHMin = 36;
+        uiHSVSMin = 50;
+        uiHSVVMin = 70;
+    }
+    //    'blue': [[128, 255, 255], [90, 50, 70]],
+    if(false)
+    {
+        uiHSVHMax = 128;
+        uiHSVSMax = 255;
+        uiHSVVMax = 255;
+        uiHSVHMin = 90;
+        uiHSVSMin = 50;
+        uiHSVVMin = 70;
+    }
+    //    'yellow': [[35, 255, 255], [25, 50, 70]],
+    if(false)
+    {
+        uiHSVHMax = 35;
+        uiHSVSMax = 255;
+        uiHSVVMax = 255;
+        uiHSVHMin = 25;
+        uiHSVSMin = 50;
+        uiHSVVMin = 70;
+    }
+    //    'purple': [[158, 255, 255], [129, 50, 70]],
+    if(false)
+    {
+        uiHSVHMax = 158;
+        uiHSVSMax = 255;
+        uiHSVVMax = 255;
+        uiHSVHMin = 129;
+        uiHSVSMin = 50;
+        uiHSVVMin = 70;
+    }
+    //    'orange': [[24, 255, 255], [10, 50, 70]],
+    if(false)
+    {
+        uiHSVHMax = 24;
+        uiHSVSMax = 255;
+        uiHSVVMax = 255;
+        uiHSVHMin = 10;
+        uiHSVSMin = 50;
+        uiHSVVMin = 70;
+    }
+    //    'gray': [[180, 18, 230], [0, 0, 40]],
+    if(false)
+    {
+        uiHSVHMax = 180;
+        uiHSVSMax = 18;
+        uiHSVVMax = 230;
+        uiHSVHMin = 0;
+        uiHSVSMin = 0;
+        uiHSVVMin = 40;
+    }
+
+    //    QLabel* label = new QLabel();
+    //    label->setAutoFillBackground(true);
+    //    QPalette palette = label->palette();
+    //    QColor color;
+    //    color.setHsv(10, 10, 10);
+    //    palette.setColor(label->backgroundRole(), color);
+    //    label->setPalette(palette);
 }
 
 
@@ -156,26 +263,36 @@ void ColorSelectorDlg::setHSVVMax(const uint8_t &value)
 
 void ColorSelectorDlg::setHSVMin()
 {
-        ui->lblHSVMin->setText(QString("(%1,%2,%3)").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin));
-        ui->lblHSVMin->setStyleSheet(QString("background-color: hsv(%1, %2%, %3%); color: hsv(%1, %2, %3);").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin).arg((uiHSVHMin + 180) % 360).arg(255-uiHSVSMin).arg(255-uiHSVVMin));
+    ui->lblHSVMin->setText(QString("(%1,%2,%3)").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin));
+    ui->lblHSVMin->setStyleSheet(QString("background-color: hsv(%1, %2%, %3%); color: hsv(%1, %2, %3);").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin).arg((uiHSVHMin + 180) % 360).arg(255-uiHSVSMin).arg(255-uiHSVVMin));
+}
+
+void ColorSelectorDlg::setHSV()
+{
+    ui->hsHSVHMin->setValue(uiHSVHMin);
+    ui->hsHSVSMin->setValue(uiHSVSMin);
+    ui->hsHSVVMin->setValue(uiHSVVMin);
+    ui->hsHSVHMax->setValue(uiHSVHMax);
+    ui->hsHSVSMax->setValue(uiHSVSMax);
+    ui->hsHSVVMax->setValue(uiHSVVMax);
 }
 
 void ColorSelectorDlg::setRGBMin()
 {
-        ui->lblRGBMin->setText(QString("(%1,%2,%3)").arg(uiRGBRMin).arg(uiRGBGMin).arg(uiRGBBMin));
-        ui->lblRGBMin->setStyleSheet(QString("background-color: rgb(%1, %2%, %3%); color: rgb(%1, %2, %3);").arg(uiRGBRMin).arg(uiRGBGMin).arg(uiRGBBMin).arg(255-uiRGBRMin).arg(255-uiRGBGMin).arg(255-uiRGBBMin));
+    ui->lblRGBMin->setText(QString("(%1,%2,%3)").arg(uiRGBRMin).arg(uiRGBGMin).arg(uiRGBBMin));
+    ui->lblRGBMin->setStyleSheet(QString("background-color: rgb(%1, %2%, %3%); color: rgb(%1, %2, %3);").arg(uiRGBRMin).arg(uiRGBGMin).arg(uiRGBBMin).arg(255-uiRGBRMin).arg(255-uiRGBGMin).arg(255-uiRGBBMin));
 }
 
 void ColorSelectorDlg::setHSVMax()
 {
-        ui->lblHSVMax->setText(QString("(%1,%2,%3)").arg(uiHSVHMax).arg(uiHSVSMax).arg(uiHSVVMax));
-        ui->lblHSVMax->setStyleSheet(QString("background-color: hsv(%1, %2%, %3%); color: hsv(%1, %2, %3);").arg(uiHSVHMax).arg(uiHSVSMax).arg(uiHSVVMax).arg((uiHSVHMax + 180) % 360).arg(255-uiHSVSMax).arg(255-uiHSVVMax));
+    ui->lblHSVMax->setText(QString("(%1,%2,%3)").arg(uiHSVHMax).arg(uiHSVSMax).arg(uiHSVVMax));
+    ui->lblHSVMax->setStyleSheet(QString("background-color: hsv(%1, %2%, %3%); color: hsv(%1, %2, %3);").arg(uiHSVHMax).arg(uiHSVSMax).arg(uiHSVVMax).arg((uiHSVHMax + 180) % 360).arg(255-uiHSVSMax).arg(255-uiHSVVMax));
 }
 
 void ColorSelectorDlg::setRGBMax()
 {
-        ui->lblRGBMax->setText(QString("(%1,%2,%3)").arg(uiRGBRMax).arg(uiRGBGMax).arg(uiRGBBMax));
-        ui->lblRGBMax->setStyleSheet(QString("background-color: rgb(%1, %2%, %3%); color: rgb(%1, %2, %3);").arg(uiRGBRMax).arg(uiRGBGMax).arg(uiRGBBMax).arg(255-uiRGBRMax).arg(255-uiRGBGMax).arg(255-uiRGBBMax));
+    ui->lblRGBMax->setText(QString("(%1,%2,%3)").arg(uiRGBRMax).arg(uiRGBGMax).arg(uiRGBBMax));
+    ui->lblRGBMax->setStyleSheet(QString("background-color: rgb(%1, %2%, %3%); color: rgb(%1, %2, %3);").arg(uiRGBRMax).arg(uiRGBGMax).arg(uiRGBBMax).arg(255-uiRGBRMax).arg(255-uiRGBGMax).arg(255-uiRGBBMax));
 }
 
 
@@ -271,38 +388,137 @@ void ColorSelectorDlg::on_hsRGBBMax_valueChanged(int value)
 
 void ColorSelectorDlg::on_btnGreen_clicked()
 {
-    ui->hsHSVHMin->setValue(30);
-    ui->hsHSVSMin->setValue(50);//(30, 50, 50);
-    ui->hsHSVVMin->setValue(50);
+    uiHSVHMax = 89;
+    uiHSVSMax = 255;
+    uiHSVVMax = 255;
+    uiHSVHMin = 36;
+    uiHSVSMin = 50;
+    uiHSVVMin = 70;
 
-    ui->hsHSVHMax->setValue(90);
-    ui->hsHSVSMax->setValue(255);//(90, 255, 255);
-    ui->hsHSVVMax->setValue(255);
+    setHSV();
+    //    ui->hsHSVHMin->setValue(30);
+    //    ui->hsHSVSMin->setValue(50);//(30, 50, 50);
+    //    ui->hsHSVVMin->setValue(50);
 
+    //    ui->hsHSVHMax->setValue(90);
+    //    ui->hsHSVSMax->setValue(255);//(90, 255, 255);
+    //    ui->hsHSVVMax->setValue(255);
 }
 
 void ColorSelectorDlg::on_btnRed_clicked()
 {
-    ui->hsHSVHMin->setValue(0);
-    ui->hsHSVSMin->setValue(0);//(30, 50, 50);
-    ui->hsHSVVMin->setValue(150);
+    uiHSVHMax = 180;
+    uiHSVSMax = 255;
+    uiHSVVMax = 255;
+    uiHSVHMin = 159;
+    uiHSVSMin = 50;
+    uiHSVVMin = 70;
 
-    ui->hsHSVHMax->setValue(50);
-    ui->hsHSVSMax->setValue(255);//(90, 255, 255);
-    ui->hsHSVVMax->setValue(255);
+    setHSV();
 
-
+    //            uiHSVHMax = 9;
+    //            uiHSVSMax = 255;
+    //            uiHSVVMax = 255;
+    //            uiHSVHMin = 0;
+    //            uiHSVSMin = 50;
+    //            uiHSVVMin = 70;
 }
 
 void ColorSelectorDlg::on_btnBlue_clicked()
 {
+    uiHSVHMax = 128;
+    uiHSVSMax = 255;
+    uiHSVVMax = 255;
+    uiHSVHMin = 90;
+    uiHSVSMin = 50;
+    uiHSVVMin = 70;
 
-    ui->hsHSVHMin->setValue(110);
-    ui->hsHSVSMin->setValue(50);//(30, 50, 50);
-    ui->hsHSVVMin->setValue(50);
+    setHSV();
 
-    ui->hsHSVHMax->setValue(130);
-    ui->hsHSVSMax->setValue(255);//(90, 255, 255);
-    ui->hsHSVVMax->setValue(255);
+    //    ui->hsHSVHMin->setValue(110);
+    //    ui->hsHSVSMin->setValue(50);//(30, 50, 50);
+    //    ui->hsHSVVMin->setValue(50);
+
+    //    ui->hsHSVHMax->setValue(130);
+    //    ui->hsHSVSMax->setValue(255);//(130,255,255);
+    //    ui->hsHSVVMax->setValue(255);
 
 }
+
+void ColorSelectorDlg::on_btnBlack_clicked()
+{
+    uiHSVHMax = 180;
+    uiHSVSMax = 255;
+    uiHSVVMax = 30;
+    uiHSVHMin = 0;
+    uiHSVSMin = 0;
+    uiHSVVMin = 0;
+
+    setHSV();
+}
+
+
+void ColorSelectorDlg::on_btnWhite_clicked()
+{
+    uiHSVHMax = 180;
+    uiHSVSMax = 18;
+    uiHSVVMax = 255;
+    uiHSVHMin = 0;
+    uiHSVSMin = 0;
+    uiHSVVMin = 231;
+
+    setHSV();
+}
+
+
+void ColorSelectorDlg::on_btnYellow_clicked()
+{
+    uiHSVHMax = 35;
+    uiHSVSMax = 255;
+    uiHSVVMax = 255;
+    uiHSVHMin = 25;
+    uiHSVSMin = 50;
+    uiHSVVMin = 70;
+
+    setHSV();
+}
+
+
+void ColorSelectorDlg::on_btnPurple_clicked()
+{
+    uiHSVHMax = 158;
+    uiHSVSMax = 255;
+    uiHSVVMax = 255;
+    uiHSVHMin = 129;
+    uiHSVSMin = 50;
+    uiHSVVMin = 70;
+
+    setHSV();
+}
+
+
+void ColorSelectorDlg::on_btnOrange_clicked()
+{
+    uiHSVHMax = 24;
+    uiHSVSMax = 255;
+    uiHSVVMax = 255;
+    uiHSVHMin = 10;
+    uiHSVSMin = 50;
+    uiHSVVMin = 70;
+
+    setHSV();
+}
+
+
+void ColorSelectorDlg::on_btnGray_clicked()
+{
+    uiHSVHMax = 180;
+    uiHSVSMax = 18;
+    uiHSVVMax = 230;
+    uiHSVHMin = 0;
+    uiHSVSMin = 0;
+    uiHSVVMin = 40;
+
+    setHSV();
+}
+

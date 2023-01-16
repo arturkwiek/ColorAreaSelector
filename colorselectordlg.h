@@ -57,6 +57,7 @@ public:
     void setHSVVMax(const uint8_t &value);
 
     void setHSVMin();
+    void setHSV();
 
 
 //    uint8_t getRGBRMin() const;
@@ -114,6 +115,18 @@ private slots:
     void on_btnRed_clicked();
 
     void on_btnBlue_clicked();
+
+    void on_btnBlack_clicked();
+
+    void on_btnWhite_clicked();
+
+    void on_btnYellow_clicked();
+
+    void on_btnPurple_clicked();
+
+    void on_btnOrange_clicked();
+
+    void on_btnGray_clicked();
 
 private:
     Ui::ColorSelectorDlg *ui;
