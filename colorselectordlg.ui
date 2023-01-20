@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>1122</width>
-    <height>540</height>
+    <height>393</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ColorSelectorDlg</string>
+   <string>EVAA Color Selector</string>
   </property>
   <widget class="QGroupBox" name="gbSource">
    <property name="geometry">
@@ -29,7 +29,7 @@
     <item row="0" column="0">
      <widget class="QLabel" name="lblSource">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -51,7 +51,7 @@
     <item row="0" column="0">
      <widget class="QLabel" name="lblCannyObj">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -62,31 +62,21 @@
     <rect>
      <x>390</x>
      <y>30</y>
-     <width>180</width>
-     <height>310</height>
+     <width>168</width>
+     <height>190</height>
     </rect>
    </property>
    <property name="title">
     <string>ColorSelectorMin</string>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout_7">
+    <item row="0" column="0">
      <widget class="QGroupBox" name="gbHSVSelector">
       <property name="title">
        <string>HSV Selector</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="2" column="1">
-        <widget class="QSlider" name="hsHSVVMin">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
+       <item row="0" column="5">
         <widget class="QLabel" name="lblHSV_HVMin">
          <property name="minimumSize">
           <size>
@@ -111,57 +101,7 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lblHSV_VMin">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>V</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lblHSV_SMin">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>S</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
+       <item row="1" column="3">
         <widget class="QSlider" name="hsHSVSMin">
          <property name="maximum">
           <number>255</number>
@@ -171,25 +111,10 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="lblHSV_SVMin">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
+       <item row="3" column="3">
+        <widget class="QLabel" name="lblHSVMinV">
          <property name="text">
-          <string>0</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
+          <string>(0,0,0)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -197,38 +122,26 @@
         </widget>
        </item>
        <item row="2" column="3">
-        <widget class="QLabel" name="lblHSV_VVMin">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
+        <widget class="QSlider" name="hsHSVVMin">
+         <property name="maximum">
+          <number>255</number>
          </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QLabel" name="lblHSVMin">
-         <property name="text">
-          <string>TextLabel</string>
+       <item row="0" column="3">
+        <widget class="QSlider" name="hsHSVHMin">
+         <property name="maximum">
+          <number>359</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
+       <item row="0" column="2">
         <widget class="QLabel" name="lblHSV_HMin">
          <property name="minimumSize">
           <size>
@@ -253,27 +166,33 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QSlider" name="hsHSVHMin">
-         <property name="maximum">
-          <number>359</number>
+       <item row="2" column="2">
+        <widget class="QLabel" name="lblHSV_VMin">
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
          </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>V</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::AutoText</enum>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QGroupBox" name="gbRGBSelector">
-      <property name="title">
-       <string>RGB Selector</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="2">
-        <widget class="QLabel" name="lblRGB_RVMin">
+       <item row="1" column="5">
+        <widget class="QLabel" name="lblHSV_SVMin">
          <property name="minimumSize">
           <size>
            <width>20</width>
@@ -298,7 +217,32 @@
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QLabel" name="lblRGB_GVMin">
+        <widget class="QLabel" name="lblHSV_SMin">
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>S</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::AutoText</enum>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="5">
+        <widget class="QLabel" name="lblHSV_VVMin">
          <property name="minimumSize">
           <size>
            <width>20</width>
@@ -322,18 +266,8 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QSlider" name="hsRGBBMin">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="lblRGB_RMin">
+       <item row="3" column="4">
+        <widget class="QLabel" name="lblHSVMinColor">
          <property name="minimumSize">
           <size>
            <width>20</width>
@@ -347,115 +281,7 @@
           </size>
          </property>
          <property name="text">
-          <string>R</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QSlider" name="hsRGBRMin">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="lblRGB_BVMin">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lblRGB_GMin">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>G</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QSlider" name="hsRGBGMin">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lblRGB_BMin">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>B</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLabel" name="lblRGBMin">
-         <property name="text">
-          <string>TextLabel</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -470,7 +296,7 @@
      <x>580</x>
      <y>30</y>
      <width>180</width>
-     <height>310</height>
+     <height>190</height>
     </rect>
    </property>
    <property name="title">
@@ -483,16 +309,6 @@
        <string>HSV Selector</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_5">
-       <item row="1" column="1">
-        <widget class="QSlider" name="hsHSVSMax">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="3">
         <widget class="QLabel" name="lblHSV_SVMax">
          <property name="minimumSize">
@@ -518,35 +334,10 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QSlider" name="hsHSVVMax">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lblHSV_VMax">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
+       <item row="3" column="1">
+        <widget class="QLabel" name="lblHSVMaxV">
          <property name="text">
-          <string>V</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
+          <string>(0,0,0)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -613,28 +404,13 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="lblHSV_HVMax">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
+       <item row="1" column="1">
+        <widget class="QSlider" name="hsHSVSMax">
+         <property name="maximum">
+          <number>255</number>
          </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
@@ -663,119 +439,8 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QLabel" name="lblHSVMax">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QGroupBox" name="gbRGBSelector_2">
-      <property name="title">
-       <string>RGB Selector</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="2">
-        <widget class="QSlider" name="hsRGBRMax">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QSlider" name="hsRGBGMax">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="lblRGB_GVMax">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="lblRGB_RMax">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>R</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QLabel" name="lblRGB_BVMax">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="3">
-        <widget class="QLabel" name="lblRGB_RVMax">
+        <widget class="QLabel" name="lblHSV_HVMax">
          <property name="minimumSize">
           <size>
            <width>20</width>
@@ -796,11 +461,21 @@
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QSlider" name="hsHSVVMax">
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="lblRGB_BMax">
+        <widget class="QLabel" name="lblHSV_VMax">
          <property name="minimumSize">
           <size>
            <width>20</width>
@@ -814,55 +489,32 @@
           </size>
          </property>
          <property name="text">
-          <string>B</string>
+          <string>V</string>
          </property>
          <property name="textFormat">
           <enum>Qt::AutoText</enum>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lblRGB_GMax">
-         <property name="minimumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>G</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::AutoText</enum>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QSlider" name="hsRGBBMax">
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
-        <widget class="QLabel" name="lblRGBMax">
+        <widget class="QLabel" name="lblHSVMaxColor">
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
          <property name="text">
-          <string>TextLabel</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -871,102 +523,116 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>540</x>
      <y>350</y>
-     <width>93</width>
-     <height>116</height>
+     <width>81</width>
+     <height>29</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QPushButton" name="btnGreen">
+     <widget class="QLabel" name="lblArea">
       <property name="text">
-       <string>green</string>
+       <string>Award:</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="btnRed">
+     <widget class="QLabel" name="lblAreaValue">
       <property name="text">
-       <string>red</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnBlue">
-      <property name="text">
-       <string>blue</string>
+       <string>0</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget_2">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>350</y>
-     <width>93</width>
-     <height>116</height>
+     <x>390</x>
+     <y>230</y>
+     <width>370</width>
+     <height>110</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_4">
-    <item>
-     <widget class="QPushButton" name="btnBlack">
-      <property name="text">
-       <string>black</string>
-      </property>
-     </widget>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QPushButton" name="btnBlack">
+        <property name="text">
+         <string>black</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnWhite">
+        <property name="text">
+         <string>white</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnGray">
+        <property name="text">
+         <string>gray</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
-    <item>
-     <widget class="QPushButton" name="btnWhite">
-      <property name="text">
-       <string>white</string>
-      </property>
-     </widget>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QPushButton" name="btnYellow">
+        <property name="text">
+         <string>yellow</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnPurple">
+        <property name="text">
+         <string>purple</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnOrange">
+        <property name="text">
+         <string>orange</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
-    <item>
-     <widget class="QPushButton" name="btnGray">
-      <property name="text">
-       <string>gray</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>350</y>
-     <width>93</width>
-     <height>116</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_5">
-    <item>
-     <widget class="QPushButton" name="btnYellow">
-      <property name="text">
-       <string>yellow</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnPurple">
-      <property name="text">
-       <string>purple</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnOrange">
-      <property name="text">
-       <string>orange</string>
-      </property>
-     </widget>
+    <item row="0" column="2">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QPushButton" name="btnGreen">
+        <property name="text">
+         <string>green</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnRed">
+        <property name="text">
+         <string>red</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnBlue">
+        <property name="text">
+         <string>blue</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

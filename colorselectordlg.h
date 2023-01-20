@@ -57,7 +57,11 @@ public:
     void setHSVVMax(const uint8_t &value);
 
     void setHSVMin();
+    void setHSVMax();
     void setHSV();
+
+    void setCountValue(int count);
+
 
 
 //    uint8_t getRGBRMin() const;
@@ -78,9 +82,6 @@ public:
 //    uint8_t getHSVV() const;
 //    void setHSVV(const uint8_t &value);
 
-    void setRGBMin();
-    void setHSVMax();
-    void setRGBMax();
 private slots:
 
     void on_hsHSVHMin_valueChanged(int value);
@@ -89,12 +90,6 @@ private slots:
 
     void on_hsHSVVMin_valueChanged(int value);
 
-    void on_hsRGBRMin_valueChanged(int value);
-
-    void on_hsRGBGMin_valueChanged(int value);
-
-    void on_hsRGBBMin_valueChanged(int value);
-
 
 
     void on_hsHSVHMax_valueChanged(int value);
@@ -102,12 +97,6 @@ private slots:
     void on_hsHSVSMax_valueChanged(int value);
 
     void on_hsHSVVMax_valueChanged(int value);
-
-    void on_hsRGBRMax_valueChanged(int value);
-
-    void on_hsRGBGMax_valueChanged(int value);
-
-    void on_hsRGBBMax_valueChanged(int value);
 
 
     void on_btnGreen_clicked();
@@ -131,21 +120,13 @@ private slots:
 private:
     Ui::ColorSelectorDlg *ui;
 
-    uint8_t uiRGBRMin;
-    uint8_t uiRGBGMin;
-    uint8_t uiRGBBMin;
-
     uint8_t uiHSVHMin;
     uint8_t uiHSVSMin;
     uint8_t uiHSVVMin;
 
-
-    uint8_t uiRGBRMax;
-    uint8_t uiRGBGMax;
-    uint8_t uiRGBBMax;
-
     uint8_t uiHSVHMax;
     uint8_t uiHSVSMax;
     uint8_t uiHSVVMax;
+
 };
 #endif // COLORSELECTORDLG_H

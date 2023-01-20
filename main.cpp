@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 
     Mat img;
     int key;
+
     VideoCapture capture(0);
 
     for(;;)
@@ -36,17 +37,23 @@ int main(int argc, char *argv[])
         flip(img,img,1);
 
         Mat img2,img3;
+        cv::Scalar hsvLow,hsvHigh, rgbLow, rgbHigh;
 
         // Przekształcenie obrazu na HSV
-        cv::Mat hsv;
+        cv::Mat hsv, rgb;
         cv::cvtColor(img, hsv, cv::COLOR_BGR2HSV);
-
-        // Określenie zakresów dolnego i górnego koloru zielonego
-        cv::Scalar lower_green(w.getHSVHMin(),w.getHSVSMin(),w.getHSVVMin());//(30, 50, 50);
-        cv::Scalar upper_green(w.getHSVHMax(),w.getHSVSMax(),w.getHSVVMax());//(90, 255, 255);
-        // Wyodrębnienie obszaru zielonego z obrazu
+        cv::cvtColor(img, rgb, cv::COLOR_BGR2RGB);
+        QColor rgbColor(0,0,0);
+        QColor hsvColor(0,0,0);
         cv::Mat mask;
-        cv::inRange(hsv, lower_green, upper_green, mask);
+
+            // Określenie zakresów dolnego i górnego koloru HSV
+            hsvLow = Scalar(w.getHSVHMin(),w.getHSVSMin(),w.getHSVVMin());//(30, 50, 50);
+            hsvHigh = Scalar(w.getHSVHMax(),w.getHSVSMax(),w.getHSVVMax());//(90, 255, 255);
+            // Wyodrębnienie obszaru koloru z obrazu
+            cv::inRange(hsv, hsvLow, hsvHigh, mask);
+
+        w.setCountValue(countNonZero(mask));
 
         // wykrycie krawędzi
         cv::Mat edges;
@@ -75,19 +82,18 @@ int main(int argc, char *argv[])
             break;
         default: break;// if(key) tap("key: " << key);
         }
-        if(edges.empty())
-            qDebug() << "empty";
-        //        imshow("edges",edges);
+
         cv::cvtColor(img, img2, COLOR_BGR2RGB);
         QImage qimgSource = QImage((const unsigned char*)(img2.data), img2.cols, img2.rows, QImage::Format_RGB888);
 
 
         // Połączenie obrazu źródłowego i krawędzi
         cv::Mat result;
+
         cv::cvtColor(mask, img3, COLOR_GRAY2RGB);
-        bitwise_and(img,img3,result);
-//                cv::addWeighted(img, 0.9, img3, 0.1, 0, result);
-//        cv::cvtColor(result, img3, COLOR_BGR2RGB);
+        bitwise_and(img2,img3,result);
+        //                cv::addWeighted(img, 0.9, img3, 0.1, 0, result);
+        //        cv::cvtColor(result, img3, COLOR_BGR2RGB);
         QImage qimgCanny = QImage((const unsigned char*)(result.data), result.cols, result.rows, QImage::Format_RGB888);
 
         w.show();
