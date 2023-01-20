@@ -202,12 +202,6 @@ void ColorSelectorDlg::setHSVVMax(const uint8_t &value)
     uiHSVVMax = value;
 }
 
-void ColorSelectorDlg::setHSVMin()
-{
-    ui->lblHSVMinV->setText(QString("(%1,%2,%3)").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin));
-    ui->lblHSVMinColor->setStyleSheet(QString("background-color: hsv(%1, %2, %3); color: hsv(%1, %2, %3);").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin).arg((uiHSVHMin + 180) % 360).arg(255-uiHSVSMin).arg(255-uiHSVVMin));
-}
-
 void ColorSelectorDlg::setHSV()
 {
     ui->hsHSVHMin->setValue(uiHSVHMin);
@@ -221,6 +215,12 @@ void ColorSelectorDlg::setHSV()
 void ColorSelectorDlg::setCountValue(int count)
 {
     ui->lblAreaValue->setText(QString::number(count));
+}
+
+void ColorSelectorDlg::setHSVMin()
+{
+    ui->lblHSVMinV->setText(QString("(%1,%2,%3)").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin));
+    ui->lblHSVMinColor->setStyleSheet(QString("background-color: hsv(%1,%2,%3); color: hsv(%1,%2,%3);").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin).arg((uiHSVHMin + 180) % 360).arg(255-uiHSVSMin).arg(255-uiHSVVMin));
 }
 
 void ColorSelectorDlg::setHSVMax()
@@ -289,13 +289,6 @@ void ColorSelectorDlg::on_btnGreen_clicked()
     uiHSVVMin = 70;
 
     setHSV();
-    //    ui->hsHSVHMin->setValue(30);
-    //    ui->hsHSVSMin->setValue(50);//(30, 50, 50);
-    //    ui->hsHSVVMin->setValue(50);
-
-    //    ui->hsHSVHMax->setValue(90);
-    //    ui->hsHSVSMax->setValue(255);//(90, 255, 255);
-    //    ui->hsHSVVMax->setValue(255);
 }
 
 void ColorSelectorDlg::on_btnRed_clicked()
@@ -308,13 +301,6 @@ void ColorSelectorDlg::on_btnRed_clicked()
     uiHSVVMin = 70;
 
     setHSV();
-
-    //            uiHSVHMax = 9;
-    //            uiHSVSMax = 255;
-    //            uiHSVVMax = 255;
-    //            uiHSVHMin = 0;
-    //            uiHSVSMin = 50;
-    //            uiHSVVMin = 70;
 }
 
 void ColorSelectorDlg::on_btnBlue_clicked()
