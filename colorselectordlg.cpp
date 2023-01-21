@@ -220,13 +220,13 @@ void ColorSelectorDlg::setCountValue(int count)
 void ColorSelectorDlg::setHSVMin()
 {
     ui->lblHSVMinV->setText(QString("(%1,%2,%3)").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin));
-    ui->lblHSVMinColor->setStyleSheet(QString("background-color: hsv(%1,%2,%3); color: hsv(%1,%2,%3);").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin).arg((uiHSVHMin + 180) % 360).arg(255-uiHSVSMin).arg(255-uiHSVVMin));
+    ui->lblHSVMinColor->setStyleSheet(QString("background-color: hsv(%1,%2,%3); color: hsv(%4,%5,%6);").arg(uiHSVHMin).arg(uiHSVSMin).arg(uiHSVVMin).arg((uiHSVHMin + 180) % 360).arg(255-uiHSVSMin).arg(255-uiHSVVMin));
 }
 
 void ColorSelectorDlg::setHSVMax()
 {
     ui->lblHSVMaxV->setText(QString("(%1,%2,%3)").arg(uiHSVHMax).arg(uiHSVSMax).arg(uiHSVVMax));
-    ui->lblHSVMaxColor->setStyleSheet(QString("background-color: hsv(%1, %2, %3); color: hsv(%1, %2, %3);").arg(uiHSVHMax).arg(uiHSVSMax).arg(uiHSVVMax).arg((uiHSVHMax + 180) % 360).arg(255-uiHSVSMax).arg(255-uiHSVVMax));
+    ui->lblHSVMaxColor->setStyleSheet(QString("background-color: hsv(%1, %2, %3); color: hsv(%4, %5, %6);").arg(uiHSVHMax).arg(uiHSVSMax).arg(uiHSVVMax).arg((uiHSVHMax + 180) % 360).arg(255-uiHSVSMax).arg(255-uiHSVVMax));
 }
 
 ColorSelectorDlg::~ColorSelectorDlg()
