@@ -82,6 +82,9 @@ public:
 //    uint8_t getHSVV() const;
 //    void setHSVV(const uint8_t &value);
 
+    bool isPlay() const;
+    void setPlay(bool newPlay);
+
 private slots:
 
     void on_hsHSVHMin_valueChanged(int value);
@@ -117,6 +120,10 @@ private slots:
 
     void on_btnGray_clicked();
 
+    void on_ColorSelectorDlg_destroyed();
+
+    void on_ColorSelectorDlg_finished(int result);
+
 private:
     Ui::ColorSelectorDlg *ui;
 
@@ -127,6 +134,7 @@ private:
     uint8_t uiHSVHMax;
     uint8_t uiHSVSMax;
     uint8_t uiHSVVMax;
+     bool bPlay;
 
 };
 #endif // COLORSELECTORDLG_H
