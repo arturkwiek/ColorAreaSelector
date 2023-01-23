@@ -25,6 +25,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     ColorSelectorDlg w;
 
+    w.show();
+
     Mat img;
     int key;
 
@@ -32,6 +34,7 @@ int main(int argc, char *argv[])
 
     for(;;)
     {
+        if(w.isPlay())
         capture >> img;
 
         flip(img,img,1);
@@ -96,7 +99,6 @@ int main(int argc, char *argv[])
         //        cv::cvtColor(result, img3, COLOR_BGR2RGB);
         QImage qimgCanny = QImage((const unsigned char*)(result.data), result.cols, result.rows, QImage::Format_RGB888);
 
-        w.show();
         w.setSourceImage(qimgSource);
         w.setCannyImage(qimgCanny);
     }

@@ -10,6 +10,7 @@ ColorSelectorDlg::ColorSelectorDlg(QWidget *parent)
     , uiHSVHMax(0)
     , uiHSVSMax(0)
     , uiHSVVMax(0)
+    , bPlay(true)
 {
 
     ui->setupUi(this);
@@ -392,4 +393,28 @@ void ColorSelectorDlg::on_btnGray_clicked()
     setHSV();
 }
 
+
+
+void ColorSelectorDlg::on_ColorSelectorDlg_destroyed()
+{
+
+    QCoreApplication::quit ();
+}
+
+
+void ColorSelectorDlg::on_ColorSelectorDlg_finished(int result)
+{
+    setPlay(false);
+    this->deleteLater();
+}
+
+bool ColorSelectorDlg::isPlay() const
+{
+    return bPlay;
+}
+
+void ColorSelectorDlg::setPlay(bool newPlay)
+{
+    bPlay = newPlay;
+}
 
